@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300&display=swap');
+/* Referencia fuentes */
+/* font-family: 'Orbitron', sans-serif;
+   font-family: 'Roboto', sans-serif; */ 
+/* Paleta de colores
+    #58817D
+    #32030D
+    #be0029
+    #163C3D
+    #1c3844
+    #7FA0B3
+    #868686
+    #FFFFFD
+*/
+
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../multimedia/image/fondo.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #1c3844;
+}
+
+@import "./header";
+@import "./carousel";
+@import "./secciones";
+@import "./formulario";
+@import "./footer";
