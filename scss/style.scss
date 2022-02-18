@@ -34,3 +34,459 @@ body{
 @import "./secciones";
 @import "./formulario";
 @import "./footer";
+
+/* Titulos de las secciones */
+.tituloSeccion {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: red;
+    text-shadow: 1px 2px #050505;
+}
+
+.principal__titulo--estilo {
+    color: red;
+    text-shadow: 1px 2px #050505;
+}
+
+/* propiedades parrafo */
+.principal__parrafo {
+    color: #85b0f1;
+    font-size: 25px;
+    text-align: justify;
+    letter-spacing: 1.5px;
+}
+
+.principal__parrafo .principal__parrafo--decoracion {
+    color: #fae100;
+    text-decoration: line-through;
+}
+
+.logo{
+    width: 10%;
+}
+.logo img{
+    width: 50%;
+    padding-left: 20%;
+}
+
+p{
+    font-size: 30px;
+    color: #7FA0B3;
+    text-align: justify;
+}
+
+
+
+/* Grid principal index */
+.contenidoPrincipal {  display: grid;
+    grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1% 0px;
+    grid-auto-flow: row dense;
+    justify-content: space-evenly;
+    align-content: center;
+    justify-items: center;
+    grid-template-areas:
+    	"mainPrincipal     mainPrincipal     mainPrincipal     mainPrincipal    "
+    	"seccionDestacados seccionDestacados seccionDestacados seccionDestacados"
+    	"seccionResenas    seccionResenas    seccionResenas    seccionResenas   ";
+    width: 100%;
+}
+/* grid main */
+.mainPrincipal {
+    justify-self: center;
+    grid-area: mainPrincipal;
+    width: 100%;
+}
+.slider{
+    width: 100%;
+}
+.slider img{
+    width: 100%;
+}
+
+/* grid seccion destacados */
+.seccionDestacados {  
+    display: grid;
+    grid-template-columns: 0.2fr repeat(3, 1fr) 0.2fr;
+    grid-template-rows: 0.4fr 2fr 0.2fr;
+    gap: 5px 30px;
+    grid-auto-flow: row dense;
+    justify-content: center;
+    justify-items: center;
+    grid-template-areas:
+        ". tituloDestacados tituloDestacados tituloDestacados ."
+        ". destacado1       destacado2       destacado3       ."
+        ". .                .                .                .";
+    justify-self: center;
+    grid-area: seccionDestacados;
+    width: 100%;
+    align-items: center;
+}
+.tituloDestacados {
+    justify-self: center;
+    grid-area: tituloDestacados;
+    width: 80%;
+    height: auto;
+}
+.videoDestacado{
+    width: 100%;
+    height: auto;
+}
+.destacado1 {
+    grid-area: destacado1;
+    width: 100%;
+    height: auto;
+}
+.destacado2 {
+    grid-area: destacado2;
+    width: 100%;
+    height: auto;
+}
+.destacado3 {
+    grid-area: destacado3;
+    width: 100%;
+    height: auto;
+}
+/* grid seccion reseñas */
+.seccionResenas {  
+    display: grid;
+    grid-template-columns: 0.2fr repeat(3, 1fr) 0.2fr;
+    grid-template-rows: 0.4fr 2fr 0.2fr;
+    gap: 5px 30px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    	". tituloResenas tituloResenas tituloResenas ."
+    	". resena1       resena2       resena3       ."
+    	". .             .             .             .";
+    justify-self: center;
+    grid-area: seccionResenas;
+    width: 100%;
+    height: auto;
+}
+.tituloResenas {
+    justify-self: center;
+    grid-area: tituloResenas;
+    width: 80%;
+    height: auto;
+}
+.resena{
+    background: #FFFFFF;
+    background: #FFFFFF;
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #163C3D 79%, #000000 100%);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-radius: 17px;
+}
+.resena:hover {
+    color: red;
+    text-shadow: 1px 2px rgb(0, 0, 0);
+    border: 1px solid red;
+    transform: scale(1.05);
+    transition: all 0.8s;
+}
+.resena h4{
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #be0029;
+    text-shadow: 1px 2px rgb(5, 5, 5);
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+.resena1 { 
+    grid-area: resena1; 
+    width: 100%;
+    height: auto;
+}
+.resena2 { 
+    grid-area: resena2; 
+    width: 100%;
+    height: auto;
+}
+.resena3 { 
+    grid-area: resena3; 
+    width: 100%;
+    height: auto;
+}
+
+/* grid servicios */
+.contenidoServicios {  
+    display: grid;
+    grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
+    grid-template-rows: 0.1fr 1fr 0.2fr;
+    gap: 2% 0px;
+    grid-auto-flow: row dense;
+    grid-template-areas:
+    	".                tituloServicios  tituloServicios  .               "
+    	"sectionServicios sectionServicios sectionServicios sectionServicios"
+        ".                .                .                .";
+    width: 100%;
+    height: auto;
+}
+.tituloServicios { 
+    grid-area: tituloServicios; 
+    justify-self: center;
+    width: 80%;
+    height: auto;
+}
+.subtitulo{
+    justify-content: center;
+}
+.descripcionSer{
+    text-align: justify;
+}
+.sectionServicios {  
+    display: grid;
+    grid-template-columns: 0.2fr repeat(4, 1fr) 0.2fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px 4px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    	". servicio1 servicio1 .         .         ."
+    	". .         .         servicio2 servicio2 ."
+    	". servicio3 servicio3 .         .         .";
+    grid-area: sectionServicios;
+}
+.servicio {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: #FFFFFF;
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #163C3D 79%, #000000 100%);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-radius: 17px;
+    align-content: center;
+}
+.servicio:hover {
+    color: red;
+    text-shadow: 1px 2px rgb(0, 0, 0);
+    border: 1px solid red;
+    transform: scale(1.08);
+    transition: all 1s;
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 0px 35px 0px;
+}
+.servicio h4{
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #be0029;
+    text-shadow: 1px 2px rgb(5, 5, 5);
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+.servicio img{
+    width: 400px;
+    height: 400px;
+}
+.servicio1 { 
+    grid-area: servicio1;
+    width: 100%;
+    height: auto;
+}
+.servicio2 { 
+    grid-area: servicio2;
+    width: 100%;
+    height: auto;
+}
+.servicio3 { 
+    grid-area: servicio3;
+    width: 100%;
+    height: auto;
+}
+
+/* grid productos */
+.contenidoProductos {  
+    display: grid;
+    grid-template-columns: 0.2fr repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2% 0px;
+    grid-auto-flow: row dense;
+    justify-content: space-evenly;
+    align-content: center;
+    justify-items: center;
+    grid-template-areas:
+    	"mainProductos    mainProductos    mainProductos   "
+    	"seccionProductos seccionProductos seccionProductos";
+    width: 100%;
+    height: auto;
+}
+.mainProductos {
+    justify-self: center;
+    grid-area: mainProductos;
+    width: 100%;
+}
+.mainProductos img{
+    width: 100%;
+}
+.seccionProductos {  display: grid;
+    grid-template-columns: 0.2fr repeat(5, 1fr) 0.2fr;
+    grid-template-rows: 0.4fr 2fr 0.2fr;
+    gap: 5px 30px;
+    grid-auto-flow: row dense;
+    justify-content: center;
+    justify-items: center;
+    grid-template-areas:
+    	". tituloProductos tituloProductos tituloProductos tituloProductos tituloProductos ."
+    	". producto1       producto2       producto3       producto4       producto5       ."
+    	". .               .               .               .               .               .";
+    justify-self: center;
+    grid-area: seccionProductos;
+    width: 100%;
+    height: auto;
+}
+.tituloProductos {
+    justify-self: center;
+    grid-area: tituloProductos;
+    width: 80%;
+    height: auto;
+}
+.producto{
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: #FFFFFF;
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #163C3D 79%, #000000 100%);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-radius: 17px;
+    align-content: center;
+}
+.producto:hover {
+    color: red;
+    text-shadow: 1px 2px rgb(0, 0, 0);
+    border: 1px solid red;
+    transform: scale(1.05);
+    transition: all 0.8s;
+}
+.producto img{
+    width: 300px;
+    height: 300px;
+}
+
+.producto1 {
+    grid-area: producto1;
+    width: 100%;
+    height: auto;
+}
+.producto2 {
+    grid-area: producto2;
+    width: 100%;
+    height: auto;
+}
+.producto3 {
+    grid-area: producto3;
+    width: 100%;
+    height: auto;
+}
+.producto4 {
+    grid-area: producto4;
+    width: 100%;
+    height: auto;
+}
+.producto5 {
+    grid-area: producto5;
+    width: 100%;
+    height: auto;
+}
+
+/* grid nosotros */
+.contenidoNosotros {  
+    display: grid;
+    grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
+    grid-template-rows: 0.1fr repeat(3, 1fr);
+    gap: 2% 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    	".      tituloNosotros   tituloNosotros   .     "
+    	".      articuloNosotros articuloNosotros .     "
+    	".      articuloNosotros articuloNosotros .     "
+        ".      .                .                .     ";
+    width: 100%;
+    height: auto;
+}
+.tituloNosotros { 
+    grid-area: tituloNosotros; 
+    justify-self: center;
+    width: 80%;
+    height: auto;
+}
+.articuloNosotros {  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    	"imagenNosotros descripcionNosotros descripcionNosotros"
+    	"imagenNosotros descripcionNosotros descripcionNosotros"
+    	"imagenNosotros descripcionNosotros descripcionNosotros";
+    grid-area: articuloNosotros;
+    width: 100%;
+    height: auto;
+}
+.imagenNosotros { 
+    grid-area: imagenNosotros; 
+    width: 100%;
+    height: auto;
+}
+.imagenNosotros__descripcion:hover {
+    transform: scale(1.09);
+    transition: all 0.8s;
+}
+.descripcionNosotros { 
+    grid-area: descripcionNosotros; 
+    width: 100%;
+    height: auto;
+}
+.cajaNosotros{
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: #FFFFFF;
+    background: radial-gradient(ellipse at center, #FFFFFF 0%, #163C3D 79%, #000000 100%);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-radius: 17px;
+    align-content: center;
+}
+.cajaNosotros p{
+    color: #32030D;
+    font-weight: bold;
+}
+
+/* grid contacto */
+.contenidoContacto {  
+    display: grid;
+    grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
+    grid-template-rows: 0.1fr repeat(3, 1fr);
+    gap: 2% 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    	".      tituloContacto    tituloContacto    .     "
+    	"mapa   mapa              mapa              mapa  "
+    	".      fomularioContacto fomularioContacto .     "
+    	".      fomularioContacto fomularioContacto .     ";
+    width: 100%;
+    height: auto;
+}
+.tituloContacto { 
+    grid-area: tituloContacto;
+    justify-self: center;
+    width: 80%;
+    height: auto;
+}
+.mapa { 
+    grid-area: mapa;
+    width: 100%;
+    height: 400px; 
+}
+.mapa iframe{
+    width: 100%;
+    height: 400px;
+}
+.fomularioContacto { 
+    grid-area: fomularioContacto;
+    width: 100%;
+    height: 1000px; 
+}

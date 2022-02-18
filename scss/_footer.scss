@@ -1,0 +1,113 @@
+/* grid footer */
+.footer {  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 0.3fr;
+    gap: 0px 0px;
+    grid-auto-flow: row dense;
+    justify-content: space-evenly;
+    align-content: space-between;
+    justify-items: center;
+    grid-template-areas:
+        "footerInfo footerInfo footerInfo"
+        "footerCopy footerCopy footerCopy";
+    justify-self: center;
+    grid-area: footer;
+    width: 100%;
+    height: auto;
+    background-color: #1c3844;
+}
+.footerInfo {  
+    display: grid;
+    grid-template-columns: 0.1fr repeat(3, 1fr) 0.1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
+    gap: 2px 6px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    	". .           .          .            ."
+    	". footerRedes footerMenu footerCorreo ."
+    	". .           .          .            .";
+    grid-area: footerInfo;
+    width: 100%;
+    height: auto;
+}
+.footerRedes { 
+    grid-area: footerRedes;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footerMenu { 
+    grid-area: footerMenu; 
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+#menuFondo li{
+    list-style: square;
+}
+.footerMenu a{
+    text-decoration: none;
+    color: #7FA0B3;
+    font-size: 20px;
+}
+.footerMenu a:hover{
+    color: #be0029;
+}
+
+.footerCorreo { 
+    grid-area: footerCorreo;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.footerCorreo h4{
+    color: #be0029;
+    text-shadow: 1px 1px 1px rgb(5, 5, 5);
+    font-size: 20px;
+}
+#email {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #7FA0B3;
+    color: black;
+}
+#submit {
+    background-image: url(../multimedia/image/send.png);
+    background-size: cover;
+    background-position: center center;
+    background-color: #58817D;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.footerCopy { 
+    background-color: #58817D;
+    grid-area: footerCopy;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 40px
+}
+.footerCopy p{
+    color: #be0029;
+    text-shadow: 1px 1px 1px rgb(5, 5, 5);
+    font-size: 20px;
+}
