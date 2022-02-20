@@ -508,7 +508,7 @@ p {
   color: red;
   text-shadow: 1px 2px black;
   border: 1px solid red;
-  transform: scale(1.05);
+  transform: scale(1.01);
   transition: all 0.8s;
 }
 
@@ -522,8 +522,8 @@ p {
 }
 
 .resena img {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   clip-path: circle(50% at 50% 50%);
 }
 
