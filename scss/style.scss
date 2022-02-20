@@ -70,17 +70,17 @@ body{
 }
 
 p{
-    font-size: 30px;
-    color: #7FA0B3;
-    text-align: justify;
+    font-size: 25px;
+    color: #fff;
+    text-shadow: 1px 2px rgb(0, 0, 0);
+    text-align: center;
 }
 
-
-
 /* Grid principal index */
-.contenidoPrincipal {  display: grid;
+.contenidoPrincipal {  
+    display: grid;
     grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 0.05fr);
     gap: 1% 0px;
     grid-auto-flow: row dense;
     justify-content: space-evenly;
@@ -89,7 +89,8 @@ p{
     grid-template-areas:
     	"mainPrincipal     mainPrincipal     mainPrincipal     mainPrincipal    "
     	"seccionDestacados seccionDestacados seccionDestacados seccionDestacados"
-    	"seccionResenas    seccionResenas    seccionResenas    seccionResenas   ";
+    	"seccionResenas    seccionResenas    seccionResenas    seccionResenas   "
+    	"footer            footer            footer            footer           ";
     width: 100%;
 }
 /* grid main */
@@ -171,7 +172,10 @@ p{
     height: auto;
 }
 .resena{
-    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #FFFFFF;
     background: radial-gradient(ellipse at center, #FFFFFF 0%, #163C3D 79%, #000000 100%);
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
@@ -191,6 +195,11 @@ p{
     text-shadow: 1px 2px rgb(5, 5, 5);
     font-size: 20px;
     letter-spacing: 3px;
+}
+.resena img{
+    width: 400px;
+    height: 400px;
+    clip-path: circle(50% at 50% 50%);
 }
 .resena1 { 
     grid-area: resena1; 
@@ -212,13 +221,13 @@ p{
 .contenidoServicios {  
     display: grid;
     grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
-    grid-template-rows: 0.1fr 1fr 0.2fr;
+    grid-template-rows: 0.1fr 1fr 0.01fr;
     gap: 2% 0px;
     grid-auto-flow: row dense;
     grid-template-areas:
     	".                tituloServicios  tituloServicios  .               "
     	"sectionServicios sectionServicios sectionServicios sectionServicios"
-        ".                .                .                .";
+        "footer           footer           footer           footer          ";
     width: 100%;
     height: auto;
 }
@@ -232,12 +241,14 @@ p{
     justify-content: center;
 }
 .descripcionSer{
-    text-align: justify;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
 }
 .sectionServicios {  
     display: grid;
     grid-template-columns: 0.2fr repeat(4, 1fr) 0.2fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 0.5fr);
     gap: 4px 4px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -247,10 +258,10 @@ p{
     grid-area: sectionServicios;
 }
 .servicio {
-    display: grid;
-    align-items: center;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background: #FFFFFF;
     background: radial-gradient(ellipse at center, #FFFFFF 0%, #163C3D 79%, #000000 100%);
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
@@ -299,7 +310,7 @@ p{
 .contenidoProductos {  
     display: grid;
     grid-template-columns: 0.2fr repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 0.1fr);
     gap: 2% 0px;
     grid-auto-flow: row dense;
     justify-content: space-evenly;
@@ -307,7 +318,8 @@ p{
     justify-items: center;
     grid-template-areas:
     	"mainProductos    mainProductos    mainProductos   "
-    	"seccionProductos seccionProductos seccionProductos";
+    	"seccionProductos seccionProductos seccionProductos"
+        "footer           footer           footer          ";
     width: 100%;
     height: auto;
 }
@@ -319,17 +331,21 @@ p{
 .mainProductos img{
     width: 100%;
 }
-.seccionProductos {  display: grid;
+.seccionProductos {  
+    display: grid;
     grid-template-columns: 0.2fr repeat(5, 1fr) 0.2fr;
-    grid-template-rows: 0.4fr 2fr 0.2fr;
+    grid-template-rows: 0.4fr 1fr;
     gap: 5px 30px;
     grid-auto-flow: row dense;
     justify-content: center;
     justify-items: center;
     grid-template-areas:
     	". tituloProductos tituloProductos tituloProductos tituloProductos tituloProductos ."
-    	". producto1       producto2       producto3       producto4       producto5       ."
-    	". .               .               .               .               .               .";
+    	". producto1       producto1   producto1 . . .                 "
+        ". . . producto2 producto2 producto2  ."
+        ". producto3 producto3 producto3 . . ."
+        ".  . . producto4 producto4 producto4  ."
+        ". producto5 producto5 producto5 . . .";
     justify-self: center;
     grid-area: seccionProductos;
     width: 100%;
@@ -394,14 +410,14 @@ p{
 .contenidoNosotros {  
     display: grid;
     grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
-    grid-template-rows: 0.1fr repeat(3, 1fr);
+    grid-template-rows: 0.1fr repeat(3, 0.2fr);
     gap: 2% 0px;
     grid-auto-flow: row;
     grid-template-areas:
-    	".      tituloNosotros   tituloNosotros   .     "
-    	".      articuloNosotros articuloNosotros .     "
-    	".      articuloNosotros articuloNosotros .     "
-        ".      .                .                .     ";
+    	".       tituloNosotros   tituloNosotros   .          "
+    	".       articuloNosotros articuloNosotros .          "
+    	".       articuloNosotros articuloNosotros .          "
+        "footer  footer           footer           footer     ";
     width: 100%;
     height: auto;
 }
@@ -425,10 +441,16 @@ p{
     width: 100%;
     height: auto;
 }
-.imagenNosotros { 
+.imagenNosotros {
+    display: flex;
+    justify-content: center;
     grid-area: imagenNosotros; 
     width: 100%;
     height: auto;
+}
+.imagenNosotros__descripcion{
+    width: 640px;
+    height: 369px;
 }
 .imagenNosotros__descripcion:hover {
     transform: scale(1.09);
@@ -449,24 +471,29 @@ p{
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
     border-radius: 17px;
     align-content: center;
+    width: 100%;
+    height: 900px;
 }
 .cajaNosotros p{
-    color: #32030D;
+    color: #be0029;
+    text-shadow: #fff;
     font-weight: bold;
+    text-align: center;
 }
 
 /* grid contacto */
 .contenidoContacto {  
     display: grid;
     grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
-    grid-template-rows: 0.1fr repeat(3, 1fr);
+    grid-template-rows: 0.1fr repeat(4, 0.4fr);
     gap: 2% 0px;
     grid-auto-flow: row;
     grid-template-areas:
     	".      tituloContacto    tituloContacto    .     "
     	"mapa   mapa              mapa              mapa  "
     	".      fomularioContacto fomularioContacto .     "
-    	".      fomularioContacto fomularioContacto .     ";
+    	".      fomularioContacto fomularioContacto .     "
+        "footer footer            footer            footer";
     width: 100%;
     height: auto;
 }
@@ -490,3 +517,445 @@ p{
     width: 100%;
     height: 1000px; 
 }
+
+/* Resoluciones responsive */
+/* Media Query para mobiles */
+@media only screen and (max-width: 480px) {
+    .glitch {
+        font-size: 10px;
+    }
+    .contenidoPrincipal {  
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: repeat(4, 0.05fr);
+        gap: 1% 0px;
+        grid-auto-flow: row dense;
+        justify-content: space-evenly;
+        align-content: stretch;
+        justify-items: center;
+        grid-template-areas:
+            "mainPrincipal     mainPrincipal     mainPrincipal     "      
+            "seccionDestacados seccionDestacados seccionDestacados " 
+            "seccionResenas    seccionResenas    seccionResenas    "
+            "footer            footer            footer            ";
+        width: 100%;
+    }
+    .seccionDestacados {  
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr repeat(3, 2fr) 0.2fr;
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+            ". tituloDestacados ."
+            ". destacado1       ."   
+            ". destacado2       ."
+            ". destacado3       ."
+            ". .                .";
+        justify-self: center;
+        grid-area: seccionDestacados;
+        width: 100%;
+        align-items: center;
+    }
+    .seccionResenas {  
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr repeat(3,2fr) 0.2fr;
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+        	". tituloResenas ."
+        	". resena1       ."
+        	". resena2       ."
+        	". resena3       ."
+        	". .             .";
+        justify-self: center;
+        grid-area: seccionResenas;
+        width: 100%;
+        height: auto;
+    }
+    .resena img{
+        width: 150px;
+        height: 150px;
+        clip-path: circle(50% at 50% 50%);
+    }
+    .sectionServicios {  
+        display: grid;
+        grid-template-columns: 0.2fr repeat(4, 1fr) 0.2fr;
+        grid-template-rows: repeat(3, 0.5fr);
+        gap: 4px 4px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". servicio1 servicio1 servicio1 servicio1 ."
+            ". servicio2 servicio2 servicio2 servicio2 ."
+            ". servicio3 servicio3 servicio3 servicio3 .";
+        grid-area: sectionServicios;
+    }
+    .servicio img{
+        width: 150px;
+        height: 150px;
+    }
+    .seccionProductos {  display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr repeat(5, 0.01fr);
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+            ". tituloProductos  ."
+            ". producto1        ."       
+            ". producto2        ."       
+            ". producto3        ."       
+            ". producto4        ."       
+            ". producto5        .";
+        justify-self: center;
+        grid-area: seccionProductos;
+        width: 100%;
+        height: auto;
+    }
+    .producto img{
+        width: 150px;
+        height: 150px;
+    }
+    .articuloNosotros {  
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 0.5fr);
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "imagenNosotros imagenNosotros imagenNosotros"
+            "descripcionNosotros descripcionNosotros descripcionNosotros"
+            "descripcionNosotros descripcionNosotros descripcionNosotros";
+        grid-area: articuloNosotros;
+        width: 100%;
+        height: auto;
+    }
+    .imagenNosotros__descripcion {
+        width: 280px;
+        height: 189px;
+    }
+    .cajaNosotros {
+        height: 1000px;
+    }
+    .formulario__boton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+    }
+    .formulario__boton--estilo {
+        font-size: 20px;
+        width: 200px;
+    }
+    .footerInfo {  
+        display: grid;
+        grid-template-columns: 0.1fr 1fr 0.1fr;
+        grid-template-rows: 0.1fr repeat(3, 1fr) 0.1fr;
+        gap: 2px 6px;
+        grid-auto-flow: row;
+        grid-template-areas:
+        	". .            ."
+        	". footerMenu   ."
+        	". footerCorreo ."
+        	". footerRedes  ."
+        	". .            .";
+        grid-area: footerInfo;
+        width: 100%;
+        height: auto;
+    }
+    #email {
+        width: 160px;
+        height: 30px;
+    }
+}
+
+/* Media Query para resolucion de tabletas pequeñas */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .glitch {
+        font-size: 15px;
+    }
+    .seccionDestacados {  
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr repeat(3, 2fr) 0.2fr;
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+            ". tituloDestacados ."
+            ". destacado1       ."   
+            ". destacado2       ."
+            ". destacado3       ."
+            ". .                .";
+        justify-self: center;
+        grid-area: seccionDestacados;
+        width: 100%;
+        align-items: center;
+    }
+    .seccionResenas {  
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr repeat(3,2fr) 0.2fr;
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+        	". tituloResenas ."
+        	". resena1       ."
+        	". resena2       ."
+        	". resena3       ."
+        	". .             .";
+        justify-self: center;
+        grid-area: seccionResenas;
+        width: 100%;
+        height: auto;
+    }
+    .resena img{
+        width: 150px;
+        height: 150px;
+        clip-path: circle(50% at 50% 50%);
+    }
+    .sectionServicios {  
+        display: grid;
+        grid-template-columns: 0.2fr repeat(4, 1fr) 0.2fr;
+        grid-template-rows: repeat(3, 0.5fr);
+        gap: 4px 4px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            ". servicio1 servicio1 servicio1 servicio1 ."
+            ". servicio2 servicio2 servicio2 servicio2 ."
+            ". servicio3 servicio3 servicio3 servicio3 .";
+        grid-area: sectionServicios;
+    }
+    .servicio img{
+        width: 150px;
+        height: 150px;
+    }
+    .seccionProductos {  display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr repeat(5, 0.01fr);
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+            ". tituloProductos  ."
+            ". producto1        ."       
+            ". producto2        ."       
+            ". producto3        ."       
+            ". producto4        ."       
+            ". producto5        .";
+        justify-self: center;
+        grid-area: seccionProductos;
+        width: 100%;
+        height: auto;
+    }
+    .producto img{
+        width: 200px;
+        height: 200px;
+    }
+    .articuloNosotros {  
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 0.5fr);
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "imagenNosotros imagenNosotros imagenNosotros"
+            "descripcionNosotros descripcionNosotros descripcionNosotros"
+            "descripcionNosotros descripcionNosotros descripcionNosotros";
+        grid-area: articuloNosotros;
+        width: 100%;
+        height: auto;
+    }
+    .imagenNosotros__descripcion{
+        width: 340px;
+        height: 269px;
+    }
+    .cajaNosotros{
+        height: 1000px;
+    }
+    .formulario__boton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+    }
+    .formulario__boton--estilo {
+        font-size: 20px;
+        width: 200px;
+    }
+    .footerInfo {  
+        display: grid;
+        grid-template-columns: 0.1fr 1fr 0.1fr;
+        grid-template-rows: 0.1fr repeat(3, 1fr) 0.1fr;
+        gap: 2px 6px;
+        grid-auto-flow: row;
+        grid-template-areas:
+        	". .            ."
+        	". footerMenu   ."
+        	". footerCorreo ."
+        	". footerRedes  ."
+        	". .            .";
+        grid-area: footerInfo;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Media Query para tabletas grandes */
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    .glitch {
+        font-size: 20px;
+    }
+    .seccionResenas {  
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr repeat(3,2fr) 0.2fr;
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+        	". tituloResenas ."
+        	". resena1       ."
+        	". resena2       ."
+        	". resena3       ."
+        	". .             .";
+        justify-self: center;
+        grid-area: seccionResenas;
+        width: 100%;
+        height: auto;
+    }
+    .resena img{
+        width: 150px;
+        height: 150px;
+        clip-path: circle(50% at 50% 50%);
+    }
+    .sectionServicios {  
+        display: grid;
+        grid-template-columns: 0.2fr repeat(4, 1fr) 0.2fr;
+        grid-template-rows: repeat(3, 0.5fr);
+        gap: 4px 4px;
+        grid-auto-flow: row;
+        grid-template-areas:
+        	". servicio1 servicio1 .         .         ."
+        	". .         .         servicio2 servicio2 ."
+        	". servicio3 servicio3 .         .         .";
+        grid-area: sectionServicios;
+    }
+    .servicio img{
+        width: 150px;
+        height: 150px;
+    }
+    .seccionProductos {  display: grid;
+        grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
+        grid-template-rows: 0.4fr repeat(5, 0.01fr);
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+            ". tituloProductos tituloProductos ."
+            ". producto1 producto1 ."
+            ". producto2 producto2 ."
+            ". producto3 producto3 ."
+            ". producto4 producto4 ."
+            ". producto5 producto5 .";
+        justify-self: center;
+        grid-area: seccionProductos;
+        width: 100%;
+        height: auto;
+    }
+    .producto img{
+        width: 150px;
+        height: 150px;
+    }
+    .articuloNosotros {  
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 0.3fr);
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "imagenNosotros imagenNosotros imagenNosotros"
+            "descripcionNosotros descripcionNosotros descripcionNosotros"
+            "descripcionNosotros descripcionNosotros descripcionNosotros";
+        grid-area: articuloNosotros;
+        width: 100%;
+        height: auto;
+    }
+    .imagenNosotros__descripcion{
+        width: 440px;
+        height: 369px;
+    }
+    .cajaNosotros{
+        height: 1000px;
+    }
+    .formulario__boton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formulario__boton--estilo {
+        font-size: 20px;
+        width: 200px;
+    }
+}
+
+/* Media Query para Laptops y Desktops */
+@media only screen and (min-width: 1025px) and (max-width: 1280px){
+    .glitch {
+        font-size: 25px;
+    }
+    .resena img{
+        width: 300px;
+        height: 300px;
+        clip-path: circle(50% at 50% 50%);
+    }
+    .servicio img{
+        width: 300px;
+        height: 300px;
+    }
+    .seccionProductos {  display: grid;
+        grid-template-columns: 0.2fr repeat(2, 1fr) 0.2fr;
+        grid-template-rows: 0.4fr repeat(5, 0.01fr);
+        gap: 5px 30px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        grid-template-areas:
+            ". tituloProductos tituloProductos ."
+            ". producto1 producto1 ."
+            ". producto2 producto2 ."
+            ". producto3 producto3 ."
+            ". producto4 producto4 ."
+            ". producto5 producto5 .";
+        justify-self: center;
+        grid-area: seccionProductos;
+        width: 100%;
+        height: auto;
+    }
+    .producto img{
+        width: 300px;
+        height: 300px;
+    }
+    .formulario__boton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formulario__boton--estilo {
+        font-size: 20px;
+        width: 200px;
+    }
+}
+
